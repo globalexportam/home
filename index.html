@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Serein Hair Co. supplies premium raw and finished human hair extensions in lengths from 12 to 30 inches.">
-	<title>Serein Hair Co. | Human Hair Extensions</title>
+	<meta name="description" content="Amaity HairHub supplies premium raw and finished human hair extensions in lengths from 10 to 30 inches.">
+	<title>Amaity HairHub | Premium Human Hair Extensions</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
 			--line: #d9d8d0;
 			--olive: #59634c;
 			--olive-dark: #3b4634;
+			--gold: #a7834d;
 			--white: #fffdf9;
 			--serif: "Playfair Display", Georgia, serif;
 			--sans: "DM Sans", Arial, sans-serif;
@@ -74,6 +75,26 @@
 		.size-list { display: flex; gap: 22px; }
 		.size-list a { color: var(--muted); font-size: 13px; }
 		.size-list a:hover { color: var(--ink); text-decoration: underline; }
+		.size-list a.active { background: var(--gold); color: var(--white); padding: 4px 8px; text-decoration: none; }
+		.product-card.is-hidden { display: none; }
+		.product-meta .detail { color: var(--muted); font-size: 11px; margin: 4px 0 0; }
+		.whatsapp { background: #237b4b; color: var(--white); }
+		.whatsapp:hover { background: #185c37; }
+		.benefits { background: var(--paper); display: grid; gap: 28px; grid-template-columns: repeat(3, 1fr); padding: 88px 10vw; }
+		.benefit { border-top: 1px solid var(--line); padding-top: 18px; }
+		.benefit strong { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+		.benefit p { color: var(--muted); font-size: 13px; margin: 0; }
+		.gallery { background: var(--white); padding: 88px 5vw; }
+		.gallery-grid { display: grid; gap: 12px; grid-template-columns: 1.4fr 1fr 1fr 1fr; margin-top: 36px; }
+		.gallery-grid img { aspect-ratio: 1 / 1.1; height: 100%; }
+		.enquiry { background: #eee8dd; display: grid; gap: 60px; grid-template-columns: 1fr 1fr; padding: 96px 10vw; }
+		.enquiry h2 { font-size: clamp(38px, 4.5vw, 64px); margin: 18px 0; }
+		.contact-list { color: var(--muted); font-size: 14px; line-height: 2; }
+		.contact-list strong { color: var(--ink); display: inline-block; min-width: 70px; }
+		.enquiry-form { display: grid; gap: 14px; }
+		.enquiry-form input, .enquiry-form textarea { background: var(--white); border: 1px solid var(--line); color: var(--ink); font: inherit; padding: 15px; width: 100%; }
+		.enquiry-form textarea { min-height: 108px; resize: vertical; }
+		.enquiry-form .button { border: 0; cursor: pointer; justify-content: space-between; margin-top: 0; }
 		.promise { display: grid; grid-template-columns: 1fr 1fr; }
 		.promise-image { min-height: 500px; object-position: center 35%; }
 		.promise-copy { align-items: start; background: var(--olive); color: #f3f1e8; display: flex; flex-direction: column; justify-content: center; padding: 10vw; }
@@ -102,37 +123,43 @@
 			.size-list { flex-wrap: wrap; gap: 10px 18px; }
 			.promise-image { min-height: 380px; }
 			.promise-copy { padding: 72px 9vw; }
+			.benefits, .enquiry { grid-template-columns: 1fr; padding: 70px 9vw; }
+			.gallery { padding: 70px 6vw; }
+			.gallery-grid { grid-template-columns: repeat(2, 1fr); }
+			.gallery-grid img:first-child { grid-column: span 2; }
 			footer { align-items: start; flex-direction: column; gap: 18px; padding: 30px 6vw; }
 		}
 	</style>
 </head>
 <body>
-	<div class="announcement">Wholesale enquiries welcome · Worldwide dispatch</div>
+	<div class="announcement">Welcome to Amaity HairHub · Wholesale and bulk enquiries welcome</div>
 	<header>
-		<a class="logo" href="#top">Serein Hair Co.</a>
+		<a class="logo" href="#top">Amaity HairHub</a>
 		<nav aria-label="Main navigation">
-			<a href="#collections">Collections</a>
-			<a href="#story">Our standard</a>
+			<a href="#top">Home</a>
+			<a href="#collections">Products</a>
+			<a href="#story">About</a>
 			<a href="#contact">Contact</a>
 		</nav>
-		<a class="header-action" href="mailto:hello@sereinhair.co">Enquire</a>
+		<a class="header-action" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20would%20like%20to%20enquire%20about%20your%20hair%20extensions.">WhatsApp</a>
 	</header>
 
 	<main id="top">
 		<section class="hero">
 			<div class="hero-copy">
-				<div class="eyebrow">The natural hair collection</div>
-				<h1>Hair that moves like your own.</h1>
-				<p>Traceable human hair extensions, selected for their softness, natural fall and enduring quality.</p>
-				<a class="button" href="#collections">Explore the collection</a>
+				<div class="eyebrow">Welcome to Amaity HairHub</div>
+				<h1>Premium human hair extensions.</h1>
+				<p>Raw and finished human hair, selected for a natural appearance, beautiful movement and dependable quality.</p>
+				<a class="button" href="#collections">View collection</a>
+				<a class="button whatsapp" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20would%20like%20to%20enquire%20about%20your%20hair%20extensions.">Enquire now</a>
 			</div>
 			<img class="hero-image" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=85" alt="Long, natural dark human hair">
 			<div class="hero-note">Natural texture · considered quality</div>
 		</section>
 
 		<section class="intro">
-			<h2>Every length, thoughtfully finished.</h2>
-			<p>From untouched raw hair to ready-to-wear finishes, find a texture and length that feels entirely yours.</p>
+				<h2>Every length, thoughtfully selected.</h2>
+				<p>From untouched raw hair to ready-to-wear finishes, find a texture and length that feels entirely yours.</p>
 		</section>
 
 		<section class="categories" id="collections" aria-label="Hair categories">
@@ -147,21 +174,49 @@
 		</section>
 
 		<section class="collection" id="raw-hair">
-			<div class="section-heading"><h2>Selected lengths</h2><p>Natural shades, consistent density, and lengths for every style.</p></div>
+			<div class="section-heading"><h2>Shop the collection</h2><p>Natural shades, consistent density, and lengths for every style. Select a length to filter.</p></div>
 			<div class="product-grid">
-				<article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=85" alt="12 inch straight hair extension"></div><div class="product-meta"><h3>Everyday straight</h3><p>12 inches · Natural black</p></div></article>
-				<article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=700&q=85" alt="18 inch wavy hair extension"></div><div class="product-meta"><h3>Soft wave</h3><p>18 inches · Natural brown</p></div></article>
-				<article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=85" alt="24 inch body wave hair extension"></div><div class="product-meta"><h3>Body wave</h3><p>24 inches · Deep brunette</p></div></article>
-				<article class="product-card" id="finished-hair"><div class="product-image"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=85" alt="30 inch luxe wave hair extension"></div><div class="product-meta"><h3>Luxe wave</h3><p>30 inches · Natural black</p></div></article>
+				<article class="product-card" data-length="12"><div class="product-image"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=85" alt="12 inch straight hair extension"></div><div class="product-meta"><h3>Everyday straight</h3><p>12 inches · Natural black</p><p class="detail">100g · Raw hair</p><a class="button whatsapp" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20am%20interested%20in%2012%20inch%20Everyday%20Straight%20hair.">Get price</a></div></article>
+				<article class="product-card" data-length="18"><div class="product-image"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=700&q=85" alt="18 inch wavy hair extension"></div><div class="product-meta"><h3>Soft wave</h3><p>18 inches · Natural brown</p><p class="detail">100g · Finished hair</p><a class="button whatsapp" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20am%20interested%20in%2018%20inch%20Soft%20Wave%20hair.">Get price</a></div></article>
+				<article class="product-card" data-length="24"><div class="product-image"><img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=85" alt="24 inch body wave hair extension"></div><div class="product-meta"><h3>Body wave</h3><p>24 inches · Deep brunette</p><p class="detail">100g · Finished hair</p><a class="button whatsapp" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20am%20interested%20in%2024%20inch%20Body%20Wave%20hair.">Get price</a></div></article>
+				<article class="product-card" data-length="30" id="finished-hair"><div class="product-image"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=85" alt="30 inch luxe wave hair extension"></div><div class="product-meta"><h3>Luxe wave</h3><p>30 inches · Natural black</p><p class="detail">100g · Raw hair</p><a class="button whatsapp" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20am%20interested%20in%2030%20inch%20Luxe%20Wave%20hair.">Get price</a></div></article>
 			</div>
-			<div class="size-bar"><strong>Available lengths</strong><div class="size-list"><a href="mailto:hello@sereinhair.co?subject=12 inch enquiry">12&quot;</a><a href="mailto:hello@sereinhair.co?subject=14 inch enquiry">14&quot;</a><a href="mailto:hello@sereinhair.co?subject=16 inch enquiry">16&quot;</a><a href="mailto:hello@sereinhair.co?subject=18 inch enquiry">18&quot;</a><a href="mailto:hello@sereinhair.co?subject=20 inch enquiry">20&quot;</a><a href="mailto:hello@sereinhair.co?subject=24 inch enquiry">24&quot;</a><a href="mailto:hello@sereinhair.co?subject=30 inch enquiry">30&quot;</a></div></div>
+			<div class="size-bar"><strong>Available lengths</strong><div class="size-list"><a class="active" href="#raw-hair" data-filter="all">All</a><a href="#raw-hair" data-filter="10">10&quot;</a><a href="#raw-hair" data-filter="12">12&quot;</a><a href="#raw-hair" data-filter="14">14&quot;</a><a href="#raw-hair" data-filter="16">16&quot;</a><a href="#raw-hair" data-filter="18">18&quot;</a><a href="#raw-hair" data-filter="20">20&quot;</a><a href="#raw-hair" data-filter="22">22&quot;</a><a href="#raw-hair" data-filter="24">24&quot;</a><a href="#raw-hair" data-filter="30">30&quot;</a></div></div>
 		</section>
 
 		<section class="promise" id="story">
 			<img class="promise-image" src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1200&q=85" alt="Stylist preparing a smooth hair extension">
-			<div class="promise-copy"><div class="eyebrow">Our standard</div><h2>Beautiful at first touch.</h2><p>Each bundle is checked by hand for consistent density, intact cuticles and a natural, polished finish. No shortcuts, just hair you can feel the difference in.</p><a class="button" href="mailto:hello@sereinhair.co">Talk to our team</a></div>
+			<div class="promise-copy"><div class="eyebrow">Our standard</div><h2>Beautiful at first touch.</h2><p>Each bundle is checked by hand for consistent density, intact cuticles and a natural, polished finish. No shortcuts, just hair you can feel the difference in.</p><a class="button" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20would%20like%20to%20know%20more%20about%20your%20quality%20checked%20hair.">Talk to Dolly</a></div>
+		</section>
+
+		<section class="benefits" aria-label="Why choose Amaity HairHub">
+			<div class="benefit"><strong>100% human hair</strong><p>Natural movement, feel and styling versatility.</p></div>
+			<div class="benefit"><strong>Quality checked</strong><p>Every bundle is selected for consistent density and finish.</p></div>
+			<div class="benefit"><strong>Raw and finished</strong><p>Choose the hair format that suits your client or collection.</p></div>
+			<div class="benefit"><strong>Multiple lengths</strong><p>From 10 to 30 inches, with custom enquiries welcome.</p></div>
+			<div class="benefit"><strong>Wholesale ready</strong><p>Ask Dolly about bulk quantities and repeat supply.</p></div>
+			<div class="benefit"><strong>Natural appearance</strong><p>Beautiful textures and shades made for a seamless blend.</p></div>
+		</section>
+
+		<section class="gallery" aria-label="Hair gallery">
+			<div class="section-heading"><h2>See the difference</h2><p>Texture, finish and detail up close.</p></div>
+			<div class="gallery-grid"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85" alt="Hair texture close-up"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=85" alt="Finished extension styling"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=85" alt="Hair preparation"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=85" alt="Soft wavy hair texture"></div>
+		</section>
+
+		<section class="enquiry" id="enquiry">
+			<div><div class="eyebrow">Personal service</div><h2>Tell us what you need.</h2><p>Contact Dolly for prices, availability, colors, textures or wholesale quantities.</p><div class="contact-list"><div><strong>Contact</strong> Dolly</div><div><strong>WhatsApp</strong> <a href="https://wa.me/917619599010">+91 7619599010</a></div><div><strong>Email</strong> Available on request via WhatsApp</div><div><strong>Location</strong> India · Worldwide enquiries</div></div></div>
+			<form class="enquiry-form" action="https://wa.me/917619599010" method="get"><input name="name" type="text" placeholder="Your name" aria-label="Your name" required><input name="length" type="text" placeholder="Length or product of interest" aria-label="Length or product of interest" required><textarea name="message" placeholder="Tell us about your enquiry" aria-label="Tell us about your enquiry"></textarea><button class="button whatsapp" type="submit">Send enquiry</button></form>
 		</section>
 	</main>
-	<footer id="contact"><p>© 2026 Serein Hair Co. · Human hair, considered.</p><div class="footer-links"><a href="mailto:hello@sereinhair.co">hello@sereinhair.co</a><a href="#top">Back to top ↑</a></div></footer>
+	<footer id="contact"><p>© 2026 Amaity HairHub · Human hair, considered.</p><div class="footer-links"><a href="https://wa.me/917619599010">WhatsApp Dolly</a><a href="#top">Back to top ↑</a></div></footer>
+	<script>
+		document.querySelectorAll("[data-filter]").forEach(function (filter) {
+			filter.addEventListener("click", function () {
+				var selectedLength = filter.dataset.filter;
+				document.querySelectorAll("[data-filter]").forEach(function (item) { item.classList.toggle("active", item === filter); });
+				document.querySelectorAll(".product-card[data-length]").forEach(function (card) { card.classList.toggle("is-hidden", selectedLength !== "all" && card.dataset.length !== selectedLength); });
+			});
+		});
+	</script>
 </body>
 </html>

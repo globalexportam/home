@@ -26,7 +26,7 @@
 		html { scroll-behavior: smooth; }
 		body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.5; }
 		img { display: block; width: 100%; object-fit: cover; }
-		.hero-image, .category img, .product-image img, .promise-image, .gallery-grid img { filter: brightness(.78) contrast(1.08) saturate(.8); }
+		.hero-image, .category img, .product-image img, .gallery-grid img { filter: brightness(.78) contrast(1.08) saturate(.8); }
 		a { color: inherit; text-decoration: none; }
 		.announcement { background: var(--olive-dark); color: #f4f1e9; font-size: 11px; letter-spacing: .12em; padding: 10px 5vw; text-align: center; text-transform: uppercase; }
 		header { align-items: center; display: flex; justify-content: space-between; padding: 24px 5vw; }
@@ -86,8 +86,9 @@
 		.benefit strong { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 8px; }
 		.benefit p { color: var(--muted); font-size: 13px; margin: 0; }
 		.gallery { background: var(--white); padding: 88px 5vw; }
-		.gallery-grid { display: grid; gap: 12px; grid-template-columns: 1.4fr 1fr 1fr 1fr; margin-top: 36px; }
-		.gallery-grid img { aspect-ratio: 1 / 1.1; height: 100%; }
+		.gallery-grid { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); margin-top: 36px; }
+		.gallery-grid img, .gallery-grid video { aspect-ratio: 1 / 1.1; height: 100%; object-fit: cover; width: 100%; }
+		.gallery-grid video:first-child { aspect-ratio: 16 / 9; grid-column: span 2; }
 		.enquiry { background: #eee8dd; display: grid; gap: 60px; grid-template-columns: 1fr 1fr; padding: 96px 10vw; }
 		.enquiry h2 { font-size: clamp(38px, 4.5vw, 64px); margin: 18px 0; }
 		.contact-list { color: var(--muted); font-size: 14px; line-height: 2; }
@@ -96,12 +97,6 @@
 		.enquiry-form input, .enquiry-form textarea { background: var(--white); border: 1px solid var(--line); color: var(--ink); font: inherit; padding: 15px; width: 100%; }
 		.enquiry-form textarea { min-height: 108px; resize: vertical; }
 		.enquiry-form .button { border: 0; cursor: pointer; justify-content: space-between; margin-top: 0; }
-		.promise { display: grid; grid-template-columns: 1fr 1fr; }
-		.promise-image { min-height: 500px; object-position: center 35%; }
-		.promise-copy { align-items: start; background: var(--olive); color: #f3f1e8; display: flex; flex-direction: column; justify-content: center; padding: 10vw; }
-		.promise-copy h2 { font-size: clamp(38px, 4.5vw, 64px); margin: 20px 0; }
-		.promise-copy p { color: #dce1d4; font-size: 15px; max-width: 370px; }
-		.promise-copy .button { background: var(--white); color: var(--ink); }
 		footer { align-items: center; display: flex; justify-content: space-between; padding: 36px 5vw; }
 		footer p { color: var(--muted); font-size: 12px; margin: 0; }
 		.footer-links { display: flex; gap: 24px; }
@@ -113,7 +108,7 @@
 			.hero-copy { padding: 72px 9vw 55px; }
 			.hero-image { justify-self: center; max-width: 100%; min-height: 420px; }
 			.intro { align-items: start; flex-direction: column; gap: 18px; padding: 72px 9vw 58px; }
-			.categories, .promise { grid-template-columns: 1fr; }
+			.categories { grid-template-columns: 1fr; }
 			.categories { padding: 0 6vw 72px; }
 			.category { min-height: 390px; }
 			.collection { padding: 70px 6vw; }
@@ -121,12 +116,10 @@
 			.product-grid { grid-template-columns: repeat(2, 1fr); }
 			.size-bar { align-items: start; flex-direction: column; gap: 14px; }
 			.size-list { flex-wrap: wrap; gap: 10px 18px; }
-			.promise-image { min-height: 380px; }
-			.promise-copy { padding: 72px 9vw; }
 			.benefits, .enquiry { grid-template-columns: 1fr; padding: 70px 9vw; }
 			.gallery { padding: 70px 6vw; }
 			.gallery-grid { grid-template-columns: repeat(2, 1fr); }
-			.gallery-grid img:first-child { grid-column: span 2; }
+			.gallery-grid video:first-child { grid-column: span 2; }
 			footer { align-items: start; flex-direction: column; gap: 18px; padding: 30px 6vw; }
 		}
 	</style>
@@ -138,7 +131,7 @@
 		<nav aria-label="Main navigation">
 			<a href="#top">Home</a>
 			<a href="#collections">Products</a>
-			<a href="#story">About</a>
+			<a href="#benefits">About</a>
 			<a href="#contact">Contact</a>
 		</nav>
 		<a class="header-action" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20would%20like%20to%20enquire%20about%20your%20hair%20extensions.">WhatsApp</a>
@@ -173,12 +166,7 @@
 			<div class="size-bar"><strong>Available lengths</strong><div class="size-list"><a class="active" href="#raw-hair" data-filter="all">All</a><a href="#raw-hair" data-filter="10">10&quot;</a><a href="#raw-hair" data-filter="12">12&quot;</a><a href="#raw-hair" data-filter="14">14&quot;</a><a href="#raw-hair" data-filter="16">16&quot;</a><a href="#raw-hair" data-filter="18">18&quot;</a><a href="#raw-hair" data-filter="20">20&quot;</a><a href="#raw-hair" data-filter="22">22&quot;</a><a href="#raw-hair" data-filter="24">24&quot;</a><a href="#raw-hair" data-filter="30">30&quot;</a></div></div>
 		</section>
 
-		<section class="promise" id="story">
-			<img class="promise-image" src="https://images.pexels.com/photos/14730867/pexels-photo-14730867.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Black raw human hair extension bundles">
-			<div class="promise-copy"><div class="eyebrow">Product details</div><h2>Raw Indian hair.</h2><p>Natural black bundles with intact cuticles, consistent density and length options from 10 to 30 inches. Order single bundles or ask Dolly about wholesale quantities.</p><a class="button" href="https://wa.me/917619599010?text=Hello%20Dolly%2C%20I%20would%20like%20to%20order%20raw%20Indian%20hair.">Order on WhatsApp</a></div>
-		</section>
-
-		<section class="benefits" aria-label="Why choose Amaity HairHub">
+		<section class="benefits" id="benefits" aria-label="Why choose Amaity HairHub">
 			<div class="benefit"><strong>100% Indian hair</strong><p>Raw human hair with intact natural cuticles.</p></div>
 			<div class="benefit"><strong>Quality checked</strong><p>Every bundle is checked for density, length and black color.</p></div>
 			<div class="benefit"><strong>Raw hair only</strong><p>Unprocessed bundles with their natural texture and movement.</p></div>
@@ -188,8 +176,8 @@
 		</section>
 
 		<section class="gallery" aria-label="Hair gallery">
-			<div class="section-heading"><h2>Raw hair product images</h2><p>Black Indian hair bundles shown close up.</p></div>
-			<div class="gallery-grid"><img src="https://images.pexels.com/photos/14730867/pexels-photo-14730867.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Black raw hair extension bundles"><img src="https://images.pexels.com/photos/14730867/pexels-photo-14730867.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Black raw straight hair texture"><img src="https://images.pexels.com/photos/14730867/pexels-photo-14730867.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Black raw wavy hair texture"><img src="https://images.pexels.com/photos/14730867/pexels-photo-14730867.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Black raw body wave hair texture"></div>
+			<div class="section-heading"><h2>Raw hair products</h2><p>Raw Indian hair bundles, textures and product video.</p></div>
+			<div class="gallery-grid"><video controls playsinline preload="metadata" poster="images/raw-guli-hair.png" aria-label="Raw Indian hair product video"><source src="videos/hh-ext-video.mp4" type="video/mp4">Your browser does not support the video tag.</video><img src="images/raw-guli-hair.png" alt="Raw guli Indian hair close-up"><img src="images/hair-ext-10-16.png" alt="Raw Indian hair bundles, 10 to 16 inches"><img src="images/hh-ext-20-26.png" alt="Raw Indian hair bundles, 20 to 26 inches"><img src="images/hh-ext-28-34.png" alt="Raw Indian hair bundles, 28 to 34 inches"></div>
 		</section>
 
 		<section class="enquiry" id="enquiry">
